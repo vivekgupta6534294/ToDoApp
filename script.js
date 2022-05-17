@@ -106,6 +106,7 @@ function createTicket(ticketColor, task, ticketId) {
         id = ticketId;
     }
 
+    
     // <div class="ticket-cont">
     //         <div class="ticket-color"></div>
     //         <div class="ticket-id">#qzu03</div>
@@ -120,6 +121,8 @@ function createTicket(ticketColor, task, ticketId) {
     mainCont.appendChild(ticketCont);
 
     //lock unlock handle
+
+    //update UI
     let lockUnlockBtn = ticketCont.querySelector(".lock-unlock i");
     let ticketTaskArea = ticketCont.querySelector(".task-area");
     lockUnlockBtn.addEventListener("click", function () {
@@ -132,17 +135,29 @@ function createTicket(ticketColor, task, ticketId) {
             lockUnlockBtn.classList.add("fa-lock");
             ticketTaskArea.setAttribute("contenteditable", "false");
         }
+
+        //update ticketArr
+        let ticketIdx = getTicketIdx(id);
+        ticketArr[ticketIdx].task = ticketTaskArea.textContent;
+
     })
 
     //handling delete 
     ticketCont.addEventListener("click", function () {
-        if (removeFlag)
+        if (removeFlag){
+            //Delete from UI
             ticketCont.remove();
+
+            //Delete from ticketArr
+            let ticketIdx = getTicketIdx(id);
+            ticketArr.splice(ticketIdx,1);//remove a ticket.
+        }
     })
 
     //handle color
     let ticketColorBand = ticketCont.querySelector(".ticket-color");
     ticketColorBand.addEventListener("click", function () {
+        //update UI
         let currentTicketColor = ticketColorBand.classList[1];
         let currentTicketColorIdx = -1;
         for (let i = 0; i < colors.length; i++) {
@@ -155,9 +170,22 @@ function createTicket(ticketColor, task, ticketId) {
         let nextColor = colors[nextColorIdx];
         ticketColorBand.classList.remove(currentTicketColor);
         ticketColorBand.classList.add(nextColor);
+        
+        //update ticketArr as well
+        let ticketIdx = getTicketIdx(id);
+        ticketArr[ticketIdx].color = nextColor;
+   
     })
 
-    if (ticketId == undefined)
-        ticketArr.push({ "color": ticketColor, "task": task, "id": "#" + id })
-    console.log(ticketArr);
+    if(ticketId == undefined)
+        ticketArr.push({ "color": ticketColor, "task": task, "id": id })
+}
+
+
+function getTicketIdx(id){
+    for(let i=0;i<ticketArr.length;i++){
+        if(ticketArr[i].id==id){
+            return i;
+        }
+    }
 }
