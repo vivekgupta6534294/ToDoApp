@@ -6,6 +6,15 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: #E0DDAA;
+    /* background-image:url(./bg.jpg); */
+    /* background-image: */
+    /* linear-gradient(to bottom, rgba(176, 183, 225, 0.52), rgba(135, 218, 229, 0.23)), */
+    /* url('./bg.jpg'); */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed;
+    background-size: 100% 100%; */
+    /* background-blend-mode: darken; */
+
 }
 
 .toolbox-cont{
@@ -13,12 +22,15 @@ body{
     background-color: #141E27;
     display: flex;
     align-items: center;
+    justify-content:space-around;
     position:fixed;
     width: 100vw;
     top:0px
 }
 
+
 .toolbox-priority-cont{
+    
     height: 3rem;
     background-color: #EEEDDE;
     width: 18rem;
@@ -38,6 +50,15 @@ body{
     align-items: center;
     justify-content: space-around;
     border-radius: 2px;
+}
+.nameTaken{
+    color: white;
+    font-size: 1.1rem;
+    font-family: 'Roboto Flex', sans-serif;
+    position: absolute;
+  top: 2rem;
+  right: 8rem;
+  /* border: 2px solid red; */
 }
 
 .color{
@@ -67,7 +88,32 @@ body{
 .remove-btn{
     font-size: 1.5rem;
 }
+.name{
+    /* background-color: black; */
+    box-sizing: border-box;
+    border: none;
+    resize: none;
+    outline:none;
+    width: 15vw;
+    background-color:#141E27;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Roboto Flex', sans-serif;
+    /* padding-left: 20%; */
+    /* padding-top: 3%; */
+    text-align: center;
+    padding-top: 3%;
+    display: block;
+}
+.name::placeholder {
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1.2rem;
+  }
 
+.nameTaken{
+    display: none;
+}
 .modal-cont{
     position: absolute;
     left: 25vw;
@@ -86,6 +132,7 @@ body{
     height: 100%;
     width: 75%;
     font-size: 2rem;
+    font-family: 'Roboto Flex', sans-serif;
     padding: 2rem;
     border-right: 2px solid #141E27;
 }
@@ -128,6 +175,7 @@ body{
 }
 
 .ticket-id{
+    font-family: 'Roboto Flex', sans-serif;
     height: 1.5rem;
     background-color: #EEEDDE;
     font-weight: 600;
