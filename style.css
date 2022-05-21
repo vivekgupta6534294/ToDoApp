@@ -58,7 +58,7 @@ body{
     color: 00ADB5;
     font-weight:bolder;
     font-size: 1.1rem;
-    font-family: 'Roboto Flex', sans-serif;
+    font-family: 'Roboto Slab', serif;
     position: absolute;
     /* top: 1rem; */
     right: 8rem;
@@ -179,16 +179,18 @@ body{
 
 .ticket-cont{
     /* border-radius: 100px; */
-    border-radius: 10px 10px 16px 16px;
+    border-radius: 5px 5px 6px 6px;
     background-color: #EEEEEE;
     height: 10rem;
+    color: Black;
     width: 16rem;
+    font-family: 'Roboto Slab', serif;
 }
 
 
 .ticket-color{
     height: 1rem;
-    border-radius: 10px 10px  0 0;
+    border-radius: 5px 5px  0 0;
 }
 
 .ticket-id{
@@ -197,12 +199,13 @@ body{
     background-color:#EEEEEE;
     font-weight: 600;
     font-size: .9rem;
-    color: #141E27;
+    color: rgb(0, 0, 0);
     margin-left: 0.3rem;
     margin-top: 0.3rem;
 }
 
 .task-area{
+    font-family: 'Roboto Slab', serif;
     height: 5rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
