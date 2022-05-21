@@ -62,6 +62,7 @@ for (let i = 0; i < toolBoxColors.length; i++) {
 }
 
 addBtn.addEventListener("click", function () {
+    addBtn.style.color="white";
   if (addModal) {
     //show modal
     modalCont.style.display = "flex";
@@ -86,6 +87,7 @@ for (let i = 0; i < allPriorityColors.length; i++) {
 modalCont.addEventListener("keydown", function (e) {
   let key = e.key;
   if (key == "Enter") {
+    addBtn.style.color="black";
     createTicket(modalPriorityColor, taskAreaCont.value);
     taskAreaCont.value = "";
     modalCont.style.display = "none";
@@ -97,7 +99,7 @@ removeBtn.addEventListener("click", function () {
   if (removeFlag) {
     removeBtn.style.color = "black";
   } else {
-    removeBtn.style.color = "red";
+    removeBtn.style.color = "white";
   }
   removeFlag = !removeFlag;
 });
@@ -218,7 +220,7 @@ function nameTakenFn() {
     nameInput.addEventListener("keyup", (e) => {
 
       let value  =e.currentTarget.value
-      
+
     if (e.key == "Enter") {
 
       localStorage.setItem("name",value);
